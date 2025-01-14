@@ -1,0 +1,17 @@
+#include <iostream>
+
+void print_sayi(int sayi);
+
+int main()
+{
+   int num;
+  std::cout << "Bir sayi giriniz: ";
+   std::cin >> num;
+   print_sayi(num);
+   
+}
+void print_sayi(int sayi){
+    
+     std::cout<<"Girilen sayi: " << sayi;
+    
+}
