@@ -1,0 +1,92 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Arac {
+private:
+    string marka;
+    string model;
+    int yil;
+    double fiyat;
+    
+public:
+    void set_marka(string m) {
+        marka = m;
+    }
+    string get_marka() {
+        return marka;
+    }
+    
+    void set_model(string m) {
+        model = m;
+    }
+    string get_model() {
+        return model;
+    }
+    
+    void set_yil(int y) {
+        if (y >= 1886) {
+            yil = y;
+        } else {
+            cout << "Geçersiz yıl girdiniz, 1886 ve sonrası yılları giriniz!" << endl;
+            yil = 1886;
+        }
+    }
+
+    int get_yil() {
+        return yil;
+    }
+
+    void set_fiyat(double f) {
+        if (f >= 0) {
+            fiyat = f;
+        } else {
+            cout << "Geçersiz fiyat girdiniz, negatif olamaz!" << endl;
+            fiyat = 0;
+        }
+    }
+    
+    double get_fiyat() {
+        return fiyat;
+    }
+
+    void indirim_uygula(double yuzde) {
+        if (yuzde > 0 && yuzde <= 100) {
+            fiyat -= fiyat * (yuzde / 100); 
+        } else {
+            cout << "Geçersiz indirim yüzdesi! Tekrar giriniz!!!" << endl;
+        }
+    }
+};
+
+int main() {
+    Arac arac;
+    
+    string marka, model;
+    int yil;
+    double fiyat;
+    
+    cout << "marka: ";
+    cin >> marka;
+    arac.set_marka(marka);
+    
+    cout << "model: ";
+    cin >> model;
+    arac.set_model(model);
+    
+    cout << "yil: ";
+    cin >> yil;
+    arac.set_yil(yil);
+    
+    cout << "fiyat: ";
+    cin >> fiyat;
+    arac.set_fiyat(fiyat);
+    
+    cout << "\narac bilgileri: " << endl;
+    cout << "marka: " << arac.get_marka() << endl;
+    cout << "model: " << arac.get_model() << endl;
+    cout << "yıl: " << arac.get_yil() << endl;
+    cout << "fiyat: " << arac.get_fiyat() << endl;
+
+    return 0;
+}
