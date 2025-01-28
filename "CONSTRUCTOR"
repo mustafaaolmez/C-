@@ -1,0 +1,48 @@
+//Constructor Nedir?
+//Bir constructor, bir sınıfın bir nesnesi oluşturulduğunda otomatik olarak çağrılan özel bir fonksiyondur. Constructor'ın temel özellikleri şunlardır:
+//Sınıf adıyla aynı isme sahiptir.
+//Geri dönüş tipi yoktur (void bile yazılmaz).
+//Bir nesne oluşturulduğunda otomatik olarak çalışır.
+
+
+#include <iostream>
+using namespace std;
+
+
+class dikdörgen {
+private:
+    int uzunluk;
+    int yukseklik;
+
+public:
+    dikdörgen(int l , int h);{
+    uzunluk = l;
+    yukseklik = h;
+    }
+    int alan(){
+        return uzunluk * yukseklik;
+    }
+    void boyutlar (){
+        cout << "uzunluk: " uzunluk << "yükseklik" << yukseklik << endl;
+    }
+};
+
+int main() {
+    int uzunlu  yukseklik;
+    cout << "dikdörtgenin uzun kenarını giriniz: ";
+    cin >> uzunluk;
+    cout << "dikdörtgenin kısa kenarını giriniz: ";
+    cin >> yukseklik;
+
+    dikdörgen mustafa_dıkdortgen(uzunluk, yukseklik);
+
+    mustafa_dıkdortgen.boyutlar();
+    cout << " dikdörgenin alanı : << mustafa_dıkdortgen.alan() << endl;
+    
+    
+    return 0;
+
+}
+
+
+
