@@ -1,0 +1,15 @@
+class Ornek {
+private:
+    int veri;
+
+public:
+    explicit Ornek(int v) : veri(v) {
+        cout << "Explicit constructor çağrıldı! Veri: " << veri << endl;
+    }
+};
+
+int main() {
+    Ornek obj1(10); // Geçerli
+    // Ornek obj2 = 20; 
+    return 0;
+}
