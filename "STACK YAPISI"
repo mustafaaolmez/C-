@@ -1,0 +1,65 @@
+#include <iostream>
+#define MAX 100 
+
+class stack 
+{
+private:
+    int tepe;
+    int arr[MAX]
+public:
+    stack(){
+        tepe = -1;
+    }
+    
+ void push(int deger){
+    if(top >=MAX - 1){
+        std::cout<<"daha fazla eleman ekleyiniz.\n"
+    }else {
+        arr[++tepe]= deger;
+        std::cout<< deger << "stack eklend.\n";
+    }
+ }
+void pop() {
+        if (tepe < 0) {
+            std::cout << "Stack zaten boş.\n";
+        } else {
+            std::cout << arr[tepe--] << " stack'ten çıkarıldı.\n";
+        }
+    }
+
+int peek() {
+        if (tepe < 0) {
+            std::cout << "Stack boş, bakılacak eleman yok.\n";
+            return -1; 
+        } else {
+            return arr[tepe];
+        }
+    }
+ bool isEmpty() {
+        return tepe < 0;
+    }
+};
+
+int main() {
+    Stack mestack;
+
+    mestack.push(06);
+    mestack.push(71);
+    mestack.push(55);
+
+    std::cout << "Stack'in en üstündeki eleman: " << mestack.peek() << "\n";
+
+    mestack.pop();
+    mestack.pop();
+
+    std::cout << "Stack'in en üstündeki eleman: " << mestack.peek() << "\n";
+
+    mestack.pop();
+    mestack.pop(); 
+
+    return 0;
+}
+
+
+
+
