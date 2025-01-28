@@ -1,0 +1,7 @@
+Constructor Türü	               Açıklama
+Default Constructor         	Parametre almaz, varsayılan değerlerle çalışır.
+Parameterized Constructor	    Parametre alır, sınıf üyelerini verilen değerlerle başlatır.
+Copy Constructor	            Aynı sınıfın başka bir nesnesini kopyalar.
+Move Constructor              Bir nesnenin kaynaklarını taşır.
+Explicit Constructor	        Constructor'ın otomatik dönüşümlerde kullanılmasını engeller.
+Delegating Constructor	      Bir constructor'ın, başka bir constructor'ı çağırarak işlevsellik paylaşması.
