@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+
+class Kutu {
+private:
+    int uzunluk; 
+
+public:
+    Kutu() : uzunluk(0) {
+        cout << "Varsayılan Constructor çağrıldı!" << endl;
+    } 
+    Kutu(int u) : uzunluk(u) {
+        cout << "Parametreli Constructor çağrıldı!" << endl;
+    }
+    Kutu(const Kutu &k) : uzunluk(k.uzunluk) {
+        cout << "Kopya Constructor çağrıldı!" << endl;
+    }
+    Kutu(Kutu &&k) noexcept : uzunluk(k.uzunluk) {
+        cout << "Taşıma Constructor çağrıldı!" << endl;
+        k.uzunluk = 0; 
+    }
+    int getUzunluk() const {
+        return uzunluk;
+    }
+    ~Kutu() {
+        cout << "Destructor çağrıldı! Uzunluk: " << uzunluk << endl;
+    }
+};
+
+int main() {
+    cout << "1. Varsayılan Constructor ile nesne oluşturuluyor:" << endl;
+    Kutu kutu1;
+
+    cout << "\n2. Parametreli Constructor ile nesne oluşturuluyor:" << endl;
+    Kutu kutu2(10); 
+
+    cout << "\n3. Kopya Constructor ile nesne oluşturuluyor:" << endl;
+    Kutu kutu3 = kutu2; 
+
+    cout << "\n4. Taşıma Constructor ile nesne oluşturuluyor:" << endl;
+    Kutu kutu4 = move(kutu2);
+
+    cout << "\nSonuçlar:" << endl;
+    cout << "kutu1 uzunluk: " << kutu1.getUzunluk() << endl;
+    cout << "kutu2 uzunluk (taşındı, artık 0 olmalı): " << kutu2.getUzunluk() << endl;
+    cout << "kutu3 uzunluk (kopya): " << kutu3.getUzunluk() << endl;
+    cout << "kutu4 uzunluk (taşındı): " << kutu4.getUzunluk() << endl;
+
+    return 0;
+}
