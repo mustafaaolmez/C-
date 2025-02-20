@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int alan(const int kenar1, int kenar2) {
+    return kenar1 * kenar2;
+}
+
+int main() {
+    int kenar;
+    int alan_hesap;
+
+    cout << "Dikdörtgenin kenarını giriniz: ";
+    cin >> kenar;  
+
+   
+    alan_hesap = alan(5, kenar);  
+
+    cout << "Dikdörtgenin alanı: " << alan_hesap << endl;
+}
