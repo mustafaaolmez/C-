@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+void pointer_swap (int *s1, int *s2){
+	
+	int gecici = *s1;
+	*s1=*s2;
+	*s2=gecici;
+}
+void referans_swap(int &r1, int &r2){
+	
+	int gecici=r1;
+	r1=r2;
+	r2=gecici;
+}
+int main() {
+   
+   int a = 5 , b = 10;
+   int &referans = a; //referansı herzaman bir değişkene eşitleriz 
+   
+   cout<<"ilk_a= " << a << endl;
+   cout<<"ilk_b= " << b << endl;
+   cout<<"-----------------------------------------------------------\n\n";
+   
+   
+   referans=15;
+   cout<<"2inci_a= " << a << endl;
+   cout<<"2inci_b= " << b << endl;
+   cout<<"-----------------------------------------------------------\n\n";
+   
+   pointer_swap(&a,&b);
+   cout<<"a= " << a << endl;
+   cout<<"b= " << b << endl;
+   cout<<"-----------------------------------------------------------\n\n";
+   
+   referans_swap(a,b);
+   cout<<"a= " << a << endl;
+   cout<<"b= " << b << endl;
+   cout<<"-----------------------------------------------------------\n\n";
+   
+   
+}
