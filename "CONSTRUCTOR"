@@ -8,41 +8,52 @@
 #include <iostream>
 using namespace std;
 
-
-class dikdörgen {
+class Dikdortgen {
 private:
     int uzunluk;
     int yukseklik;
 
 public:
-    dikdörgen(int l , int h);{
-    uzunluk = l;
-    yukseklik = h;
+    Dikdortgen(int l, int h) {
+        uzunluk = l;
+        yukseklik = h;
     }
-    int alan(){
+
+    Dikdortgen(int kenar) {
+        uzunluk = yukseklik = kenar;
+    }
+
+    int alan() {
         return uzunluk * yukseklik;
     }
-    void boyutlar (){
-        cout << "uzunluk: " uzunluk << "yükseklik" << yukseklik << endl;
+
+    void boyutlar() {
+        cout << "Uzunluk: " << uzunluk << " Yükseklik: " << yukseklik << endl;
     }
 };
 
 int main() {
-    int uzunlu  yukseklik;
-    cout << "dikdörtgenin uzun kenarını giriniz: ";
+    int uzunluk, yukseklik;
+
+    cout << "Dikdörtgenin uzun kenarını giriniz: ";
     cin >> uzunluk;
-    cout << "dikdörtgenin kısa kenarını giriniz: ";
+    cout << "Dikdörtgenin kısa kenarını giriniz: ";
     cin >> yukseklik;
 
-    dikdörgen mustafa_dıkdortgen(uzunluk, yukseklik);
+    Dikdortgen dikdortgen1(uzunluk, yukseklik);
 
-    mustafa_dıkdortgen.boyutlar();
-    cout << " dikdörgenin alanı : << mustafa_dıkdortgen.alan() << endl;
-    
-    
+    cout << "\nDikdörtgen Bilgileri:" << endl;
+    dikdortgen1.boyutlar();
+    cout << "Dikdörtgenin Alanı: " << dikdortgen1.alan() << endl;
+
+    Dikdortgen kare(5);
+    cout << "\nKare Bilgileri:" << endl;
+    kare.boyutlar();
+    cout << "Karenin Alanı: " << kare.alan() << endl;
+
     return 0;
-
 }
+
 
 
 
