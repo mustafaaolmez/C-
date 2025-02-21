@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+class Time {
+	public:
+		int saat,dakika;
+		Time(int s, int d){
+			saat=s;
+			dakika=d;
+		}
+	Time(int d){
+		saat=d/60;
+		dakika=d%60;
+	}
+	void zamani_goster(){
+		cout<<"saat: "<<saat<<"dakika: "<<dakika<<endl;
+	}
+};
+
+int main() {
+	Time t1(2,68);
+	Time t2(125);
+	
+	t1.zamani_goster();
+	t2.zamani_goster();
+}
