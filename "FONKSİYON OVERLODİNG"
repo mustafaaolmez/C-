@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int topla(int a, int b){
+	return a+b;
+}
+double topla (double a, double b){
+	return a+b; 
+}
+int cikart(int a, int b){
+	return a-b;
+}
+double cikart(double a, double b){
+	return a-b; 
+}
+
+int main() {
+	
+	cout<<topla(20,10)<<endl;
+	cout<<topla(20.3,10.2)<<endl;
+	cout<<cikart(20,10)<<endl;
+	cout<<cikart(20.3,10.2)<<endl;
+}
